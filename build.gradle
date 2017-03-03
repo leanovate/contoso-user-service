@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+		springBootVersion = '1.5.2.BUILD-SNAPSHOT'
 	}
 	repositories {
 		mavenCentral()
@@ -31,11 +31,7 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.cloud:spring-cloud-starter-eureka')
-	compile('org.springframework.cloud:spring-cloud-starter')
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-data-rest')
-	runtime('com.h2database:h2')
+	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
