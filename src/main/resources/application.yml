@@ -4,6 +4,9 @@ server:
 spring:
     application:
         name: user-service
+    kafka:
+        consumer:
+            valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer
     cloud:
         stream:
             kafka:
@@ -11,5 +14,11 @@ spring:
                     brokers: localhost:9092
                     zk-nodes: localhost:2181
             bindings:
-                output:
-                    destination: topic-jhipster
+                input:
+                    destination: users
+                    group: usergroup
+                users:
+                    consumer:
+                        configuration:
+                            value:
+                                deserializer: org.apache.kafka.common.serialization.StringDeserializer
